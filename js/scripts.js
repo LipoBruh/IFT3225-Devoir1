@@ -5,9 +5,76 @@ document.addEventListener("DOMContentLoaded", function(event){
     document.getElementById('form-base-2').addEventListener = updateElements();
     document.getElementById('form-base-3').addEventListener = updateElements();
 
+
   });
 
 
+// navigation entre les onglets
+
+document.getElementById(id).style.property = new style
+
+
+
+function question1(){
+    try{
+        component1 = document.getElementById("main-component-1");
+        component2 = document.getElementById("main-component-2");
+
+        if (component1!=null && component2!=null) {
+            console.log("Question 1")
+            component1.style.display = "inline";
+            component2.style.display = "none";
+        }
+    }
+    catch{
+        console.log("Not ready to update the component.")
+    }
+
+
+}
+
+
+
+function question2(){
+    try{
+        component1 = document.getElementById("main-component-1");
+        component2 = document.getElementById("main-component-2");
+
+        if (component1!=null && component2!=null) {
+            console.log("Question 1")
+            component1.style.display = "none";
+            component2.style.display = "inline";
+        }
+    }
+    catch{
+        console.log("Not ready to update the component.")
+    }
+}
+
+
+
+
+
+
+
+
+//q1 stuff
+
+
+  function buttonARN(base,form){
+    try{
+        formElement = document.getElementById(form);
+        if (formElement!=null) {
+            console.log(base);
+            formElement.value= base;
+            updateElements()
+        }
+    }
+    catch{
+        console.log("Could not update the component.")
+    }
+
+  }
 
 
 
@@ -22,7 +89,7 @@ function updateElements(){
         if (title != null && image!=null) {
             console.log(data.name);
             title.innerHTML=data.name;
-            image.innerHTML= '<img alt="Amino Acid" src="'+data.image +'"class="rounded d-block mx-auto" style="max-width: 40%;"></img>'
+            image.innerHTML= '<img alt="Amino Acid" src="'+data.image +'"class="rounded d-block mx-auto" style="max-width: 20% !important;"></img>'
         }
     }
     catch{

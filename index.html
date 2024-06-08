@@ -24,120 +24,193 @@
 	
 
 
-    <div class="container-fluid bg-success min-vh-100 d-flex flex-column" style="background-color: azure !important;">
+<div class="container-fluid bg-success min-vh-100 d-flex flex-column" style="background-color: azure !important;">
+		
 
-	<div class="row bg-info">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h1>
-					Devoir 1 - IFT3225 E24
-				</h1>
+	<!--Header-->
+		<div class="row" style="background-color: #ddb892 !important;" >
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1 class = "px-3 py-1">
+						Devoir 1 - IFT3225 E24
+					</h1>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row bg-secondary mb-auto mt-auto mx-4 " style="height: auto !important;">
+
+
+
+
+	<!--Wrapper - Middle part-->
+
+
+		<div class="row m-auto" style="min-width: 50%; max-width: 90%;">
 		
 
-		
 
-		<div class="col-md-6 my-4">
-			<div class="row ">
-				<div class="col-md-12">
-					<h3 class="text-center">
-						Traduction d'un codon d'ARN
-					</h3>
-					<div class="row px-4">
-						<div class="col-md-12 mx-auto bg-white rounded" id="div-image-amino-acid">
-							<!-- Where the image will appear -->
-						</div>
-					</div>
-					<div class="row">
+			<!-- Onglets -->
+			<div class="row w-100" >
+
+				<button type="button" class="btn btn-sm custom-btn-1 " onclick='question1()' style="margin-right: 1px ;">
+					
+					<h6 class="mx-auto">Question 1</h6>
+
+				</button>
+
+				<button type="button" class="btn btn-sm custom-btn-1 " onclick='question2()'>
+
+					<h6 class="mx-auto" >Question 2</h6>
+
+				</button>
+
+			</div>
+
+
+
+
+
+			<!-- Main component 1 -->
+			<div id="main-component-1" class="row w-100" style="background-color:rgba(20, 10, 0, 0.15);" style="visibility:visible;">
+				
+				<div class="col-xs-12 my-4 mx-auto px-4" style="width:90%;" >
+					<div class="row ">
 						<div class="col-md-12">
-							<div>
-								<p id="q1-aa-name" class="text-center">
-									Entrez le codon d'un acide aminé
-								</p>
-							</div>
-							<div class="row" id = "div-forms-bases ">
-								<div class="col-md-4">
-										<button type="button" class="btn btn-sm btn-secondary custom-btn-1 w-100">
-											T
-										</button> 
-									<input type="text" id="form-base-1" class="form-control" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
-								
-									<button type="button" class="btn btn-secondary btn-sm w-100">
-										A
-									</button>
-								</div>
-								<div class="col-md-4">
-									<button type="button" class="btn btn-sm btn-secondary w-100">
-										T
-									</button> 
-									
-									<input type="text" id="form-base-2" class="form-control" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
-								
-									<button type="button" class="btn btn-secondary btn-sm w-100">
-										A
-									</button>
-								</div>
-								<div class="col-md-4">
-									<button type="button" class="btn btn-sm btn-secondary w-100">
-										T
-									</button> 
-									<input type="text" id="form-base-3" class="form-control" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
-								
-									<button type="button" class="btn btn-secondary btn-sm w-100">
-										A
-									</button>
+							<h3 class="text-center mb-4">
+								Traduction d'un codon d'ARN
+							</h3>
+							<div class="row px-4">
+								<div class="col-md-12 mx-auto bg-white rounded" id="div-image-amino-acid">
+									<!-- Where the image will appear -->
 								</div>
 							</div>
-							<div>
-								<button type="submit" class="btn btn-primary w-100">
-									Add to list
-								</button>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<p id="q1-aa-name" class="text-center h6 mx-auto my-4">
+											Entrez le codon d'un acide aminé
+										</p>
+										<span class="badge badge-primary" style="visibility: hidden;">
+											<!--Where the label will appear-->
+										</span>
+									</div>
+									<div class="row" id = "div-forms-bases">
+										<div class="col-md-4">
+											<div class="row mx-auto">
+												<div class="col-xs-4 mx-auto ">
+													<button type="button" class="btn btn-sm btn-secondary" onclick='buttonARN("U","form-base-1")'>
+														U
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary "  onclick='buttonARN("A","form-base-1")'>
+														A
+													</button>
+												</div> 
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("C","form-base-1")'>
+														C
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary  " onclick='buttonARN("G","form-base-1")'>
+														G
+													</button> 
+												</div>
+											</div>
+											<div class="row">
+												<input type="text" id="form-base-1" class="form-control mx-1" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row mx-auto">
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("U","form-base-2")'>
+														U
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("A","form-base-2")'>
+														A
+													</button>
+												</div> 
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("C","form-base-2")'>
+														C
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("G","form-base-2")'>
+														G
+													</button> 
+												</div>
+											</div>
+											<div class="row">
+												<input type="text" id="form-base-2" class="form-control mx-1" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row mx-auto">
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("U","form-base-3")'>
+														U
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("A","form-base-3")'>
+														A
+													</button>
+												</div> 
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("C","form-base-3")'>
+														C
+													</button> 
+												</div>
+												<div class="col-xs-4 mx-auto">
+													<button type="button" class="btn btn-sm btn-secondary " onclick='buttonARN("G","form-base-3")'>
+														G
+													</button> 
+												</div>
+											</div>
+											<div class="row">
+												<input type="text" id="form-base-3" class="form-control mx-1" aria-describedby="div-forms-bases" placeholder="Insert Base" onchange="updateElements()">
+											</div>
+										</div>
+									</div>
+									<!--
+									<div class="row">
+										<button type="submit" class="btn btn-primary mx-auto mt-4">
+											Add to list
+										</button>
+									</div>
+									-->
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
+
+			<!--Component Number 2-->
+			<div id="main-component-2" class="row w-100" style="background-color:rgba(20, 100, 0, 0.15);display:none !important;">
+				<p>TODO Question 2</p>
+				<!--TODO SOSO / SAUCE-->
+			
+			</div>
+
 		</div>
-		<div class="col-md-6">
-			<div class="row">
-				<div class="col-md-12">
-					<h3 class="text-center">
-						Visualisation textuelle de l'ARN
-					</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					 <span class="badge badge-primary">Ala</span> <span class="badge badge-success">Lys</span>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<p class="text-center">
-						AUUAAT
-					</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<p class="text-center">
-						AUUAAT
-					</p>
-				</div>
+
+
+		</div>
+		<div class="row bg-success" style="background-color: #ddb892 !important;" >
+			<div class="col-md-12">
+				<p class="text-center">
+					Footer moment.
+				</p>
 			</div>
 		</div>
-	</div>
-	<div class="row bg-success">
-		<div class="col-md-12">
-			<p class="text-center">
-				Footer moment.
-			</p>
-		</div>
-	</div>
+	
 </div>
 
   </body>

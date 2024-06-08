@@ -1,0 +1,13 @@
+.custom-btn-1 {
+    border-radius: 5% 5% 0% 0% !important;
+    background-color:rgba(20, 10, 0, 0.15) !important;
+
+
+}
+
+.custom-btn-1:hover {
+    border-radius: 5% 5% 0% 0% !important;
+    color:rgba(255, 255, 255, 1) !important;
+
+
+}
