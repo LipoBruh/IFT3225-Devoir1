@@ -149,6 +149,7 @@ function afficherAcideAmine() {
 
             var tableBody = document.getElementById('table');
             tableBody.innerHTML = '';
+            var carousel='';
 
 
 
@@ -167,17 +168,21 @@ function afficherAcideAmine() {
 
                 nameCell.textContent = acideAmine.name;
                 acronymCell.textContent = acideAmine.acronym;
+                var imageImg = '<img src="' + acideAmine.image + '" alt="Amino Acid" class="caroussel-img d-block caroussel-img">';
+                imageDiv =  '<div class="carousel-item">'+imageImg+'</div>'
+                carousel += imageDiv;
                 imageCell.innerHTML = '<img src="' + acideAmine.image + '" alt="Amino Acid" style="max-width: 50px; align : center">';
-
-
             }
+
+
 
             // Afficher limage de lacide
             if (acideAmine) {
 
             }
                 var imageDiv = document.getElementById('div-image-amino-acid-q2');
-                imageDiv.innerHTML = '<img alt="Amino Acid" src="' + acideAmine.image + ' "class="rounded d-block mx-auto" " style="max-width: 60% !important;"></img>';
+                console.log(carousel);
+                imageDiv.innerHTML = carousel;
 
             } else {
 
