@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function(event){
     document.getElementById('form-base-2').addEventListener = updateElements();
     document.getElementById('form-base-3').addEventListener = updateElements();
 
+     document.getElementById('afficherBtn').addEventListener('click', function() {
+            afficherAcideAmine();
+        });
 
   });
 
@@ -41,7 +44,7 @@ function question2(){
         component2 = document.getElementById("main-component-2");
 
         if (component1!=null && component2!=null) {
-            console.log("Question 1")
+            console.log("Question 2")
             component1.style.display = "none";
             component2.style.display = "inline";
         }
@@ -50,12 +53,6 @@ function question2(){
         console.log("Not ready to update the component.")
     }
 }
-
-
-
-
-
-
 
 
 //q1 stuff
@@ -98,9 +95,6 @@ function updateElements(){
 }
 
 
-
-
-
 function valueToString(element){
     if (element != null) {
         str = element.value.toString();
@@ -132,6 +126,75 @@ function codonToAminoAcid(){
     console.log("Change in input");
     codon = formsToCodon();
     console.log(codon);
+    return codonToAminoAcid2(codon);
+}
+
+
+/////////////////////////////////////////Partie 2//////////////////////////////////////////////
+
+function sleep(milliseconds) { /*Inspired from */
+      return new Promise(resolve => setTimeout(resolve, milliseconds));
+   }
+//fOR Saucy AnneSo
+
+function afficherAcideAmine() {
+
+    try {
+
+        var entrerUtilisateur = document.getElementById('entrerARN').value.trim().toUpperCase();
+
+
+        //1.  Les bases acceptes :  U, A, C, G
+        if (/^[AUCG]+$/.test(entrerUtilisateur)) {
+
+            var tableBody = document.getElementById('table');
+            tableBody.innerHTML = '';
+
+
+
+            //2. Lire l'entrée de lèutilisateur par groupe de 3 bases
+            for (var i = 0; i < entrerUtilisateur.length; i += 3) {
+                var codon = entrerUtilisateur.substr(i, 3);
+                var acideAmine = codonToAminoAcid2(codon);
+
+                // 3. Afficher les infos dans le tableau
+                var row = tableBody.insertRow();
+                var nameCell = row.insertCell(0);
+                var acronymCell = row.insertCell(1);
+                var imageCell = row.insertCell(2);
+                //
+
+
+                nameCell.textContent = acideAmine.name;
+                acronymCell.textContent = acideAmine.acronym;
+                imageCell.innerHTML = '<img src="' + acideAmine.image + '" alt="Amino Acid" style="max-width: 50px; align : center">';
+
+
+            }
+
+            // Afficher limage de lacide
+            if (acideAmine) {
+
+            }
+                var imageDiv = document.getElementById('div-image-amino-acid-q2');
+                imageDiv.innerHTML = '<img alt="Amino Acid" src="' + acideAmine.image + ' "class="rounded d-block mx-auto" " style="max-width: 60% !important;"></img>';
+
+            } else {
+
+                alert('La séquence est invalide. Ce qui est accepté : U, A, C, G');
+            }
+
+
+    } catch (error) {
+
+        console.error('Erreur', error);
+        alert('Une erreur sest produite.');
+
+    }
+}
+
+
+function codonToAminoAcid2(codon){
     switch(codon){
         //Phe
         case "UUU":
@@ -147,7 +210,7 @@ function codonToAminoAcid(){
         case "AGU":
         case "AGC":
         case "UCU":
-        case "UCC":    
+        case "UCC":
         case "UCA":
         case "UCG": return {acronym:"Ser",name:"Serine",image:".\\images\\L-Serine.png"};
         //Tyr
@@ -224,4 +287,7 @@ function codonToAminoAcid(){
             throw new Error("Invalid Codon")
     }
 }
+
+
+
 

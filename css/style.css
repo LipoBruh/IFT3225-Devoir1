@@ -1,13 +1,56 @@
 .custom-btn-1 {
     border-radius: 5% 5% 0% 0% !important;
     background-color:rgba(20, 10, 0, 0.15) !important;
-
-
 }
 
 .custom-btn-1:hover {
     border-radius: 5% 5% 0% 0% !important;
     color:rgba(255, 255, 255, 1) !important;
-
-
 }
+
+#main-component-1 {
+    width: 800px;
+    height: 600px;
+    overflow: auto;
+}
+
+#div-image-amino-acid{
+  width: 400px;
+  height: 300px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**Pour la partie 2**/
+
+
+#main-component-2 {
+    width: 800px;
+    height: 600px;
+    overflow: auto;
+}
+#div-image-amino-acid-q2{
+  width: 400px;
+  height: 300px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/**
+
+#bouton-affichage button {
+    background-color : grey;
+    border-radius: 5% 5% 0% 0% !important;
+    background-color:rgba(20, 10, 0, 0.15) !important;
+}
+
+#bouton-affichage button : hover {
+    border-radius: 5% 5% 0% 0% !important;
+    color:rgba(255, 255, 255, 1) !important;
+    **/
+}
+
+
