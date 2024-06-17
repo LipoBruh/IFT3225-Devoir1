@@ -17,6 +17,7 @@
 	  <link href="css/style.css" rel="stylesheet">
 	  <!-- Bootstrap script -->
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	  <script src="js/scripts.js"></script>
   </head>
   <body class="h-100 bg-danger">
@@ -199,38 +200,36 @@
 
 
 						  <div class="row px-4 mt-3">
-							  <div class="col-md-6 mx-auto bg-danger rounded">
 
-								  <!-- Where the image will appear -->
-								  <div class="w-100 h-100 carousel slide" data-ride="carousel" id="carouselExampleIndicators" >
 
-									  <div class="carousel-inner" id="div-image-amino-acid-q2">
+							  <div class="col-md-6 mx-auto rounded">
 
-										  <div class="carousel-item m-auto">
-											  <img class="d-block caroussel-img" src="https://studium.umontreal.ca/pluginfile.php/3223608/user/icon/boost/f2?rev=136244190" alt="First slide">
-										  </div>
+								  <!-- CAROUSEL -->
+								  <div class="w-100 h-100 carousel slide" data-ride="carousel" id="myCarousel" data-interval="false">
 
+
+									  <div class="carousel-inner active" id="div-image-amino-acid-q2">
 										  <!--Ajouter les autres acides aminés si applicable <3 sosoooooooo -->
 									  </div>
 
 
-
 									  <!-- Controls, see bootstrap docu :  https://getbootstrap.com/docs/4.0/components/carousel/  -->
-									  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+									  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
 										  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 										  <span class="sr-only">Précédent</span>
 									  </a>
 
 
-									  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-										  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-										  <span class="sr-only">Next</span>
+									  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+										  <span class="carousel-control-next-icon" aria-hidden="true" onclick="$('#myCarousel').carousel('next')"></span>
+										  <span class="sr-only">Suivant</span>
 									  </a>
-
 
 								  </div>
 								  <!-- -->
 							  </div>
+
+
 
 							  <!--Modifier vitesse animation et affichage-->
 							  <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
@@ -245,21 +244,22 @@
 										  </div>
 
 										<div class="btn-group m-auto bg-danger" role="group">
-											  <button id="vitesse-lente-btn" class="btn btn-primary  form-control" value="100">Lente</button>
+											  <button id="vitesse-lente-btn" class="btn btn-primary  form-control" value="5000">Lente</button>
 
-											  <button id="vitesse-normal-btn" class="btn btn-primary form-control" value="300">Normale</button>
+											  <button id="vitesse-normal-btn" class="btn btn-primary form-control" value="3000"  >Normale</button>
 
-											  <button id="vitesse-rapide-btn" class="btn btn-primary  form-control" value="600">Rapide</button>
+											  <button id="vitesse-rapide-btn" class="btn btn-primary  form-control" value="1000">Rapide</button>
 										</div>
 
 									  </div>
 
-
 								  </div>
+
 								  <div class="form-group w-100">
-									  <button id="afficherBtn" class="btn btn-primary btn-block" onclick='affichageAA()'>Afficher</button>
+									  <button id="afficherBtn" class="btn btn-primary btn-block" onclick='afficherAcideAmine()'>Afficher</button>
 								  </div>
 							  </div>
+
 						  </div>
 
 
@@ -278,6 +278,7 @@
 								  </table>
 							  </div>
 						  </div>
+
 					  </div>
 				  </div>
 			  </div>

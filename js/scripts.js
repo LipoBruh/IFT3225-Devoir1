@@ -149,9 +149,11 @@ function afficherAcideAmine() {
 
             var tableBody = document.getElementById('table');
             tableBody.innerHTML = '';
-            var carousel='';
 
+            var carouselImages = document.getElementById('div-image-amino-acid-q2');
+            carouselImages.innerHTML = '';
 
+            var carousel = '';
 
             //2. Lire l'entrée de lèutilisateur par groupe de 3 bases
             for (var i = 0; i < entrerUtilisateur.length; i += 3) {
@@ -163,26 +165,24 @@ function afficherAcideAmine() {
                 var nameCell = row.insertCell(0);
                 var acronymCell = row.insertCell(1);
                 var imageCell = row.insertCell(2);
-                //
 
 
+                // Afficher limage de lacide
                 nameCell.textContent = acideAmine.name;
                 acronymCell.textContent = acideAmine.acronym;
-                var imageImg = '<img src="' + acideAmine.image + '" alt="Amino Acid" class="caroussel-img d-block caroussel-img">';
-                imageDiv =  '<div class="carousel-item">'+imageImg+'</div>'
+                imageCell.innerHTML = '<img src="' + acideAmine.image + '" alt="Amino Acid" style="max-height: 60px; align : center">';
+
+
+              //Partie du carrousel
+                var imageImg = '<img src="' + acideAmine.image + '" alt="Amino Acid" class="caroussel-img d-block" style="width: 100px; align : center">';
+                var imageDiv =  '<div class="carousel-item">'+imageImg+'</div>'
                 carousel += imageDiv;
-                imageCell.innerHTML = '<img src="' + acideAmine.image + '" alt="Amino Acid" style="max-width: 50px; align : center">';
+                //
             }
+            carouselImages.innerHTML = carousel;
+            carouselImages.firstChild.classList.add('active');
 
 
-
-            // Afficher limage de lacide
-            if (acideAmine) {
-
-            }
-                var imageDiv = document.getElementById('div-image-amino-acid-q2');
-                console.log(carousel);
-                imageDiv.innerHTML = carousel;
 
             } else {
 
@@ -197,6 +197,30 @@ function afficherAcideAmine() {
 
     }
 }
+
+
+$(document).ready(function() {
+
+    $( "#vitesse-lente-btn" ).on( "click", function() {
+
+        $("myCarousel").data("bs.carousel").options.interval =  interval;
+
+    } );
+
+
+    $( "#vitesse-normal-btn" ).on( "click", function() {
+
+
+    } );
+
+    $( "#vitesse-rapide-btn" ).on( "click", function() {
+
+
+    } );
+
+}
+
+
 
 
 function codonToAminoAcid2(codon){
