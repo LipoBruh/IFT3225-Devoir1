@@ -41,23 +41,9 @@
 }
 
 .caroussel-img{
-max-width:100%;
-max-height:100%;
-align : center;
-}
-
-/**
-
-#bouton-affichage button {
-    background-color : grey;
-    border-radius: 5% 5% 0% 0% !important;
-    background-color:rgba(20, 10, 0, 0.15) !important;
-}
-
-#bouton-affichage button : hover {
-    border-radius: 5% 5% 0% 0% !important;
-    color:rgba(255, 255, 255, 1) !important;
-    **/
+    max-width:100%;
+    max-height:100%;
+    align : center;
 }
 
 

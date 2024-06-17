@@ -162,14 +162,14 @@ function afficherAcideAmine() {
 
                 // 3. Afficher les infos dans le tableau
                 var row = tableBody.insertRow();
-                var nameCell = row.insertCell(0);
-                var acronymCell = row.insertCell(1);
+                var nomCell = row.insertCell(0);
+                var abregeCell = row.insertCell(1);
                 var imageCell = row.insertCell(2);
 
 
                 // Afficher limage de lacide
-                nameCell.textContent = acideAmine.name;
-                acronymCell.textContent = acideAmine.acronym;
+                nomCell.textContent = acideAmine.name;
+                abregeCell.textContent = acideAmine.acronym;
                 imageCell.innerHTML = '<img src="' + acideAmine.image + '" alt="Amino Acid" style="max-height: 60px; align : center">';
 
 
@@ -197,30 +197,6 @@ function afficherAcideAmine() {
 
     }
 }
-
-
-$(document).ready(function() {
-
-    $( "#vitesse-lente-btn" ).on( "click", function() {
-
-        $("myCarousel").data("bs.carousel").options.interval =  interval;
-
-    } );
-
-
-    $( "#vitesse-normal-btn" ).on( "click", function() {
-
-
-    } );
-
-    $( "#vitesse-rapide-btn" ).on( "click", function() {
-
-
-    } );
-
-}
-
-
 
 
 function codonToAminoAcid2(codon){
