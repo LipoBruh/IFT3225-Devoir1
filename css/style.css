@@ -1,20 +1,20 @@
 .custom-btn-1 {
-    border-radius: 5% 5% 0% 0% !important;
-    background-color:rgba(20, 10, 0, 0.15) !important;
+  border-radius: 5% 5% 0% 0% !important;
+  background-color: rgba(20, 10, 0, 0.15) !important;
 }
 
 .custom-btn-1:hover {
-    border-radius: 5% 5% 0% 0% !important;
-    color:rgba(255, 255, 255, 1) !important;
+  border-radius: 5% 5% 0% 0% !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 #main-component-1 {
-    width: 800px;
-    height: 600px;
-    overflow: auto;
+  width: 800px;
+  height: 600px;
+  overflow: auto;
 }
 
-#div-image-amino-acid{
+#div-image-amino-acid {
   width: 400px;
   height: 300px;
   overflow: auto;
@@ -27,11 +27,12 @@
 
 
 #main-component-2 {
-    width: 800px;
-    height: 600px;
-    overflow: auto;
+  width: 800px;
+  height: 600px;
+  overflow: auto;
 }
-#div-image-amino-acid-q2{
+
+#div-image-amino-acid-q2 {
   width: 400px;
   height: 300px;
   overflow: auto;
@@ -40,10 +41,7 @@
   align-items: center;
 }
 
-.caroussel-img{
-    max-width:100%;
-    max-height:100%;
-    align : center;
+.caroussel-img {
+  max-width: 100%;
+  max-height: 100%;
 }
-
-
